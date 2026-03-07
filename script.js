@@ -20,17 +20,6 @@ const projects = [
   },
   {
     id: 2,
-    title: "Student Management System",
-    category: "Academic",
-    short: "System to manage student records with full CRUD operations and database integration.",
-    long:
-      "Designed and implemented a student management system supporting create, read, update, and delete operations. Structured relational tables, wrote SQL queries, and built user flows to manage student information efficiently.",
-    tech: ["C / C++", "DBMS", "SQL"],
-    github: "",
-    demo: ""
-  },
-  {
-    id: 3,
     title: "Data Visualization Dashboard in Excel",
     category: "Data",
     short: "Interactive dashboard showcasing insights using charts, slicers, and formatted visuals.",
