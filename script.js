@@ -1,9 +1,9 @@
 // ------------ DATA ---------------
 
 const skills = {
-  programming: ["C", "C++", "Python", "Java (basics)"],
+  programming: ["C", "C++", "Python"],
   aiMl: ["Machine Learning basics", "Azure AI-900", "NPTEL Machine Learning"],
-  tools: ["DBMS / SQL", "Excel (Data Viz)", "Git & GitHub", "Windows", "Ubuntu", "Canva"]
+  tools: ["Excel (Data Viz)", "Git & GitHub", "Windows", "Ubuntu", "Canva"]
 };
 
 const projects = [
