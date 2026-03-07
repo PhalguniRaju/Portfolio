@@ -41,19 +41,19 @@ const certifications = [
   {
     title: "NPTEL – Introduction to Machine Learning",
     org: "NPTEL",
-    year: "2024",
+    year: "2025",
     desc: "Supervised/unsupervised learning, model evaluation, and core ML algorithms."
   },
   {
     title: "NPTEL – Database Management Systems",
     org: "NPTEL",
-    year: "2023",
+    year: "2025",
     desc: "Relational models, SQL queries, normalization, and transaction concepts."
   },
   {
     title: "Deloitte – Data Analytics Job Simulation",
     org: "Deloitte",
-    year: "2023",
+    year: "2025",
     desc: "Data cleaning, exploratory analysis, and communicating business insights."
   }
 ];
