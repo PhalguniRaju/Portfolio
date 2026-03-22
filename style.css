@@ -333,7 +333,10 @@ html[data-theme="light"] .card {
   background: #ffffff;
 }
 
-.card:hover {
+.card:hover,
+.project-card:hover,
+.hobby-card:hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   transform: translateY(-6px);
   box-shadow: var(--shadow-soft);
   border-color: rgba(236, 72, 153, 0.85);
@@ -365,7 +368,11 @@ html[data-theme="light"] .card {
 }
 
 .project-card.flipped .project-inner {
-  transform: rotateY(180deg);
+ transform: rotateY(180deg);
+}
+  .project-card:not(.flipped):hover .project-inner {
+  transform: rotateY(12deg);
+  
 }
 
 .project-front,
@@ -520,7 +527,7 @@ html[data-theme="light"] .project-back {
 
 .hobbies-grid .hobby-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 26px 55px rgba(15, 23, 42, 0.95);
+  box-shadow: var(--shadow-soft);
 }
 
 /* Different gradients per hobby */
