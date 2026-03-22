@@ -1,9 +1,9 @@
 // ------------ DATA ---------------
 
 const skills = {
-  programming: ["C", "C++", "Python"],
-  aiMl: ["Machine Learning basics", "Azure AI-900", "NPTEL Machine Learning"],
-  tools: ["Excel (Data Viz)", "Git & GitHub", "Windows", "Ubuntu", "Canva"]
+  programming: ["C","Python"],
+  aiMl: ["Machine Learning basics", "llm's"],
+  tools: ["VS Code", "GitHub", "Windows", "Ubuntu", "Canva", "Power BI", "Tableau"]
 };
 
 const projects = [
@@ -14,9 +14,9 @@ const projects = [
     short: "Simulation-based optimization to improve race car performance using ML-style analysis.",
     long:
       "Built a simulation pipeline to model race car performance under different configurations. Applied data-driven analysis to evaluate parameter changes, compare outcomes, and suggest more optimal setups.",
-    tech: ["Python", "Simulation", "Machine Learning"],
+    tech: ["Python", "Machine Learning"],
     github: "",
-    demo: ""
+    demo: "https://opttrax.vercel.app/"
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const projects = [
     long:
       "Used Excel to clean and organize raw data, derive KPIs, and build charts and pivot tables. Created an interactive dashboard with slicers and conditional formatting to highlight trends and insights quickly.",
     tech: ["Excel", "Data Visualization"],
-    github: "",
+    github: "https://github.com/PhalguniRaju/Data-Visualization",
     demo: ""
   }
 ];
@@ -35,26 +35,30 @@ const certifications = [
   {
     title: "Microsoft Azure AI-900 Fundamentals",
     org: "Microsoft",
-    year: "2024",
-    desc: "AI workloads, ML concepts, and responsible AI on Microsoft Azure."
+    year: "2025",
+    desc: "AI workloads, ML concepts, and responsible AI on Microsoft Azure.",
+    link: "certificates/ai900.pdf"
   },
   {
     title: "NPTEL – Introduction to Machine Learning",
     org: "NPTEL",
     year: "2025",
-    desc: "Supervised/unsupervised learning, model evaluation, and core ML algorithms."
+    desc: "Supervised/unsupervised learning, model evaluation, and core ML algorithms.",
+    link: "certificates/ml.pdf"
   },
   {
     title: "NPTEL – Database Management Systems",
     org: "NPTEL",
     year: "2025",
-    desc: "Relational models, SQL queries, normalization, and transaction concepts."
+    desc: "Relational models, SQL queries, normalization, and transaction concepts.",
+    link: "certificates/dbms.pdf"
   },
   {
     title: "Deloitte – Data Analytics Job Simulation",
     org: "Deloitte",
     year: "2025",
-    desc: "Data cleaning, exploratory analysis, and communicating business insights."
+    desc: "Data cleaning, exploratory analysis, and communicating business insights.",
+    link: "certificates/delloite.pdf"
   }
 ];
 
@@ -179,6 +183,13 @@ function renderProjects() {
     front.appendChild(h3);
     front.appendChild(badge);
     front.appendChild(shortP);
+    const flipHint = document.createElement("p");
+flipHint.textContent = "Click to flip";
+flipHint.style.fontSize = "0.75rem";
+flipHint.style.opacity = "0.7";
+flipHint.style.marginTop = "10px";
+
+front.appendChild(flipHint);
 
     // BACK side
     const back = document.createElement("div");
@@ -208,6 +219,40 @@ function renderProjects() {
     back.appendChild(h3Back);
     back.appendChild(longP);
     back.appendChild(techDiv);
+    if (project.github || project.demo) {
+  const links = document.createElement("div");
+  links.style.marginTop = "10px";
+  links.style.display = "flex";
+  links.style.gap = "8px";
+
+  if (project.github) {
+    const g = document.createElement("a");
+    g.href = project.github;
+    g.textContent = "GitHub";
+    g.target = "_blank";
+    g.className = "btn primary";
+
+    // 🔥 prevent flip when clicking button
+    g.addEventListener("click", (e) => e.stopPropagation());
+
+    links.appendChild(g);
+  }
+
+  if (project.demo) {
+    const d = document.createElement("a");
+    d.href = project.demo;
+    d.textContent = "Live Demo";
+    d.target = "_blank";
+    d.className = "btn primary";
+
+    // 🔥 prevent flip when clicking button
+    d.addEventListener("click", (e) => e.stopPropagation());
+
+    links.appendChild(d);
+  }
+
+  back.appendChild(links);
+}
     back.appendChild(hint);
 
     inner.appendChild(front);
@@ -232,6 +277,13 @@ function renderCertifications() {
   certifications.forEach((c) => {
     const card = document.createElement("article");
     card.className = "card small";
+    if (c.link) {
+      card.style.cursor = "pointer";
+
+      card.addEventListener("click", () => {
+        window.open(c.link, "_blank");
+      });
+    }
 
     const header = document.createElement("div");
     header.className = "cert-header";
@@ -257,6 +309,13 @@ function renderCertifications() {
     card.appendChild(header);
     card.appendChild(org);
     card.appendChild(desc);
+    if (c.link) {
+      const hint = document.createElement("p");
+      hint.textContent = "Click to view certificate";
+      hint.style.fontSize = "0.75rem";
+      hint.style.opacity = "0.7";
+      card.appendChild(hint);
+    }
 
     grid.appendChild(card);
   });
