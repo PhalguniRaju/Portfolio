@@ -8,22 +8,30 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
+
   <!-- NAVBAR -->
   <header class="nav">
     <div class="container nav-inner">
       <div class="logo">PR</div>
+
       <nav class="nav-links">
-        <button data-scroll="#about">About</button>
-        <button data-scroll="#skills">Skills</button>
-        <button data-scroll="#education">Education</button>
-        <button data-scroll="#projects">Projects</button>
-        <button data-scroll="#certs">Certifications</button>
-        <button data-scroll="#hobbies">Hobbies</button>
-        <button data-scroll="#contact">Contact</button>
+        <button type="button" data-scroll="#about">About</button>
+        <button type="button" data-scroll="#skills">Skills</button>
+        <button type="button" data-scroll="#education">Education</button>
+        <button type="button" data-scroll="#projects">Projects</button>
+        <button type="button" data-scroll="#certs">Certifications</button>
+        <button type="button" data-scroll="#hobbies">Hobbies</button>
+        <button type="button" data-scroll="#contact">Contact</button>
       </nav>
+
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
         🌙
       </button>
@@ -31,27 +39,31 @@
   </header>
 
   <main>
+
     <!-- HERO -->
     <section class="hero fade-section">
       <div class="container hero-inner">
+        
         <div class="hero-text">
           <p class="hero-tag">3rd Year CSE</p>
           <h1>Hi, I'm <span class="accent">Phalguni Raju</span></h1>
+
           <div class="hero-actions">
-            <button class="btn primary" data-scroll="#projects">
+            <button type="button" class="btn primary" data-scroll="#projects">
               View Projects
             </button>
-            <button class="btn ghost" data-scroll="#contact">
+            <button type="button" class="btn ghost" data-scroll="#contact">
               Contact Me
             </button>
           </div>
         </div>
+
         <div class="hero-photo">
           <div class="photo-ring">
-            <!-- Make sure this file exists in the repo root -->
-            <img src="profile.jpg" alt="Phalguni Raju profile photo" />
+            <img src="profile.jpg" alt="Portrait of Phalguni Raju" />
           </div>
         </div>
+
       </div>
     </section>
 
@@ -60,191 +72,176 @@
       <div class="container">
         <p class="section-tag">About Me</p>
         <h2 class="section-title">Who am I</h2>
+
         <p style="text-align: justify;">
-  I'm a Computer Science Engineering student specializing in AI & ML.
-  I enjoy building small projects that actually work, experimenting with data,
-  and continuously learning new tools that help me grow as an engineer.
-</p>
+          I'm a Computer Science Engineering student specializing in AI & ML.
+          I enjoy building small projects that actually work, experimenting with data,
+          and continuously learning new tools that help me grow as an engineer.
+        </p>
+
         <p>
-          I’m currently exploring areas like AI, data insights, and how technology can solve
-          real-world problems. I’ve taken up a few certifications and courses along the way,
-          and I enjoy learning new tools whenever a project needs them.
+          I’m currently exploring areas like AI, data insights, and real-world problem solving.
+          I enjoy picking up new tools whenever a project demands it.
         </p>
       </div>
     </section>
+
+    <!-- EDUCATION -->
     <section id="education" class="section fade-section">
-  <div class="container">
-    <p class="section-tag">Education</p>
-    <h2 class="section-title">Academic Journey</h2>
-
-    <div class="grid">
-
-      <article class="card">
-        <h3>Bachelor of Technology – Computer Science (AIML)</h3>
-        <p>Alliance University</p>
-        <p>2023 – Present</p>
-        <p><strong>CGPA: 8.5</strong></p>
-      </article>
-
-      <article class="card">
-        <h3>Higher Secondary School</h3>
-        <p>Christ Academy</p>
-        <p>2023</p>
-        <p><strong>87%</strong></p>
-      </article>
-
-      <article class="card">
-        <h3>Secondary School</h3>
-        <p>Ryan International School</p>
-        <p>2021</p>
-        <p><strong>90%</strong></p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-    <!-- SKILLS (dynamic) -->
-    <section id="skills" class="section fade-section">
       <div class="container">
-        <p class="section-tag">Skills</p>
-        <h2 class="section-title">Technologies I work with</h2>
-        <div id="skills-grid" class="skills-grid">
-          <!-- Filled dynamically by script.js -->
+        <p class="section-tag">Education</p>
+        <h2 class="section-title">Academic Journey</h2>
+
+        <div class="grid">
+
+          <article class="card">
+            <h3>B.Tech – Computer Science (AIML)</h3>
+            <p>Alliance University</p>
+            <p>2023 – Present</p>
+            <p><strong>CGPA: 8.5</strong></p>
+          </article>
+
+          <article class="card">
+            <h3>Higher Secondary School</h3>
+            <p>Christ Academy</p>
+            <p>2023</p>
+            <p><strong>87%</strong></p>
+          </article>
+
+          <article class="card">
+            <h3>Secondary School</h3>
+            <p>Ryan International School</p>
+            <p>2021</p>
+            <p><strong>90%</strong></p>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS (dynamic + filters + flipping) -->
+    <!-- SKILLS -->
+    <section id="skills" class="section fade-section">
+      <div class="container">
+        <p class="section-tag">Skills</p>
+        <h2 class="section-title">Technologies I work with</h2>
+        <div id="skills-grid" class="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
     <section id="projects" class="section fade-section">
       <div class="container">
         <p class="section-tag">Projects</p>
         <h2 class="section-title">Things I've built</h2>
 
-        <div id="project-filters" class="filter-row">
-          <!-- Filter buttons injected by script.js -->
-        </div>
-
-        <div id="projects-grid" class="grid">
-          <!-- Project cards injected by script.js -->
-        </div>
+        <div id="project-filters" class="filter-row"></div>
+        <div id="projects-grid" class="grid"></div>
       </div>
     </section>
 
-    <!-- CERTIFICATIONS (dynamic) -->
+    <!-- CERTIFICATIONS -->
     <section id="certs" class="section fade-section">
       <div class="container">
         <p class="section-tag">Certifications</p>
         <h2 class="section-title">What I've Learnt</h2>
-        <div id="certs-grid" class="grid">
-          <!-- Certification cards injected by script.js -->
-        </div>
+        <div id="certs-grid" class="grid"></div>
       </div>
     </section>
 
-    <!-- HOBBIES (fun colorful cards) -->
+    <!-- HOBBIES -->
     <section id="hobbies" class="section fade-section">
       <div class="container">
         <p class="section-tag">Beyond Engineering</p>
         <h2 class="section-title">What I enjoy in my free time</h2>
+
         <p class="section-sub">
-          A quick look at the things that keep me creative, active, and curious.
+          A quick look at what keeps me creative and curious.
         </p>
-        <div id="hobbies-grid" class="grid hobbies-grid">
-          <!-- Hobby cards injected by script.js -->
-        </div>
+
+        <div id="hobbies-grid" class="grid hobbies-grid"></div>
       </div>
     </section>
 
-       <!-- CONTACT -->
+    <!-- CONTACT -->
     <section id="contact" class="section fade-section">
       <div class="container contact-layout">
+
         <div class="contact-text">
           <p class="section-tag">Contact</p>
           <h2 class="section-title">Let's work together</h2>
+
           <p>
-            Have an internship, project, or collaboration in mind? I’d love to
-            hear from you. Share a few details and I’ll get back to you.
+            Have an internship, project, or collaboration in mind?
+            I’d love to hear from you.
           </p>
+
           <div class="contact-details">
             <p><strong>Email:</strong>
               <a href="mailto:Phalguniraju18@gmail.com">Phalguniraju18@gmail.com</a>
             </p>
-            <!-- PHONE NUMBER ADDED HERE -->
-        <p><strong>Phone:</strong>
-          <a href="tel:+916364404045">
-            +91 6364404045
-          </a>
-        </p>
+
+            <p><strong>Phone:</strong>
+              <a href="tel:+916364404045">+91 6364404045</a>
+            </p>
+
             <div class="socials">
-              <a href="https://github.com/Phalguniraju" target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-              <a href="https://www.linkedin.com/in/phalguni-raju/" target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
+              <a href="https://github.com/Phalguniraju" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/phalguni-raju/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
         </div>
 
+        <!-- FORM -->
         <div class="contact-form-card">
-          <form
-            id="contact-form"
-            class="contact-form"
-            action="https://formspree.io/f/mjknoekg"
-            method="POST"
-          >
+          <form id="contact-form" class="contact-form"
+                action="https://formspree.io/f/mjknoekg"
+                method="POST">
+
             <input type="hidden" name="_subject" value="New message from your portfolio" />
 
             <div class="form-field">
               <label for="name">Name</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Your name"
-                required
-              />
+              <input id="name" name="name" type="text" required />
             </div>
 
             <div class="form-field">
               <label for="email">Email</label>
-              <input
-                id="email"
-                name="_replyto"
-                type="email"
-                placeholder="you@example.com"
-                required
-              />
+              <input id="email" name="_replyto" type="email" required />
             </div>
 
             <div class="form-field">
               <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                placeholder="Tell me a bit about what you're looking for..."
-                required
-              ></textarea>
+              <textarea id="message" name="message" rows="4" required></textarea>
             </div>
 
             <button type="submit" class="btn primary full-width">
               Send Message ✉️
             </button>
-            <p class="contact-hint">
-              This will be sent directly to my email.
-            </p>
-            <p id="form-status" class="contact-hint" style="min-height: 1.2em;"></p>
+
+            <p id="form-status" class="contact-hint"></p>
           </form>
         </div>
+
       </div>
     </section>
-    <footer class="footer">
-      <div class="container">
-        © <span id="year"></span> Phalguni Raju 
-      </div> 
-    </footer> 
-    <script src="script.js"></script> 
-</body> 
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Phalguni Raju
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/916364404045?text=Hi%20Phalguni%2C%20I%20visited%20your%20portfolio"
+     target="_blank"
+     class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+
+</body>
 </html>
